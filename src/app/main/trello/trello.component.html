@@ -1,0 +1,23 @@
+<div class="row justify-content-center align-items-center p-5">
+  <div class="example-list p-0">
+    <div class="headers example-box justify-content-center" *ngFor="let day of days"
+      [style.background-color]="day.color">
+      {{day.name}}
+    </div>
+  </div>
+
+  <div cdkDropListGroup class="p-0">
+    <div *ngFor="let item of tasks; let i= index" cdkDropList cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="drop(i, $event)" class="example-list p-0">
+      <div class="example-box example-box-content justify-content-center headers" [style.background-color]="item.color">
+         {{item.time}}
+      </div>
+      <div class="example-box example-box-content" (click)="handleOpenAdd()" *ngFor="let timePeriod of item.items; let colIndex = index" cdkDrag>
+        {{timePeriod.name}}
+        <span class="date-content">
+          {{timePeriod.date}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
