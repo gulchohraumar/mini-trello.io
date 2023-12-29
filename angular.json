@@ -33,8 +33,6 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
-              "./src/assets/fontawesome-free-6.5.1-web/css/all.css",
-              "./src/assets/fontawesome-free-6.5.1-web/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []

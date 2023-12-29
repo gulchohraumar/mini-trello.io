@@ -12,7 +12,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -33,6 +33,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     MatSelectModule,
     MatMenuModule,
+    MatCheckboxModule,
     
   ]
 })

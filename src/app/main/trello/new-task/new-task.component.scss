@@ -12,7 +12,7 @@
 
 ::ng-deep .mat-form-field-infix {
     padding: 0 !important;
-    border:none;
+    border: none;
 
 }
 
@@ -64,10 +64,10 @@
 ::ng-deep .mat-input-container.mat-input-focused:not([mat-no-float]) .mat-select-placeholder span:first-child {
     -webkit-transform: none;
     transform: none;
- }
+}
 
 
- ::ng-deep  .placeholder {
+::ng-deep .placeholder {
     padding: 0 5px !important;
 }
 
@@ -110,7 +110,7 @@
 ::ng-deep .field .mdc-text-field {
     padding: 0 !important;
 }
- 
+
 ::ng-deep .form-container .mat-mdc-form-field {
     width: 100% !important;
 }
@@ -175,6 +175,28 @@
     min-height: auto !important;
 }
 
+::ng-deep .mat-checkbox-checked .mat-checkbox-checkmark {
+    opacity: 0 !important;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-radius: 5px !important;
+    width: 20px;
+    height: 20px;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-frame {
+    border-width: 6px !important;
+    border-color: cornflowerblue !important;
+    border-radius: 5px !important;
+    background-color: #fff !important;
+
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: transparent !important;
+}
+
 .cancel {
     background-color: rgb(255, 205, 75) !important;
     border: none;
@@ -182,12 +204,12 @@
     color: #fff;
 }
 
- .apply {
+.apply {
     background-color: rgb(6, 143, 255) !important;
     border: none;
     outline: none;
     color: #fff;
- }
+}
 
 .header-name {
     outline-color: cornflowerblue;
@@ -209,3 +231,54 @@
     width: 15px;
 }
 
+.delete-btn {
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    right: 14px;
+    top: 4px;
+}
+
+.check-btn {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    // background: #c5c5c5;
+    // border: 1px solid cornflowerblue;
+    width: 35px;
+    text-align: center;
+    height: -webkit-fill-available;
+    border-top-left-radius: 5px;
+    border-radius: 5px;
+}
+
+.checklist input {
+    padding: 0 0 0 38px;
+}
+
+.selectfileInputPay {
+    position: absolute !important;
+    width: 92% !important; 
+    opacity: 0;
+}
+
+.doc-file i {
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    color: #000;
+}
+
+.doc-file .file {
+    padding: 0 0 0 30px;
+    cursor: pointer;
+    background-color: transparent !important;
+    height: 20px !important;
+    border: none !important;
+}
+
+.delete-file-btn{
+    font-size: 19px;
+    color: red;
+    margin-top: -3px;
+}
