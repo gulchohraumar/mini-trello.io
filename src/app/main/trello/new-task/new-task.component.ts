@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -13,6 +13,7 @@ export class NewTaskComponent implements OnInit {
 
   title = new FormControl('')
   constructor(
+    private fb: FormBuilder,
     private dialogRef: MatDialogRef<NewTaskComponent>,
     private sanitizer: DomSanitizer
   ) { }
@@ -24,15 +25,49 @@ export class NewTaskComponent implements OnInit {
     }
   ];
 
+  labelsArray: any[] = [];
+
+  workForm!: FormGroup;
+  generateForm() {
+    this.workForm = this.fb.group({
+      workList: this.fb.array([])
+    })
+  }
+
   ngOnInit(): void {
+    this.generateForm();
   }
 
   onCloseDialog() {
     this.dialogRef.close();
   }
 
-  handleSelectCheck(event: any) {
+  get workList() {
+    return <FormArray>this.workForm.controls['workList'];
+  }
 
+  newWork(): FormGroup {
+    return this.fb.group({
+      id: 0,
+      isCheck: false,
+      value: '',
+    });
+  }
+
+  handleAddChecklist() {
+    this.workList.push(this.newWork());
+  }
+
+  handleDeleteChecklist(index: number) {
+    this.workList.removeAt(index);
+  }
+
+  handleAddLabel(data: any) {
+    this.labelsArray.length != 3 ? this.labelsArray.push(data) : null;
+  }
+
+  handleDeleteLabels(index: number) {
+    this.labelsArray.splice(index, 1);
   }
 
   file?: File | null = null;
@@ -56,5 +91,8 @@ export class NewTaskComponent implements OnInit {
     this.fileArray.splice(i, 1);
   }
 
+  handleSave() {
+    console.log(this.workForm.value);
+  }
 
 }

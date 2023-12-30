@@ -1,58 +1,61 @@
 <div class="row justify-content-between bg-white">
     <div class="col-md-12 py-2 d-flex">
-        <div class=" header-name-con ">
-            <input class="header-name" formControlName="title" type="text">
+        <div class=" header-name-con " style="position: relative;">
+            <i class="fa-regular fa-credit-card-front"></i>
+            <input class="header-name" type="text">
         </div>
         <img class="close ms-3" type="button" src="../../../../assets/operations/cancel-x.svg"
             (click)="onCloseDialog()">
     </div>
 </div>
 
-<div class="row  pt-2">
+<div class="row">
     <div class="col-md-3 pt-2 row bg-white">
-        <div class="col-md-12 ">
-            <div class="field">
-                <input autocomplete="off" placeholder="Ad" type="text" id="name" name="name" />
+        <div class="">
+            <div class="col-md-12 ">
+                <div class="field">
+                    <input autocomplete="off" placeholder="Ad" type="text" id="name" name="name" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="field">
-                <input autocomplete="off" placeholder="Soyad" type="text" id="name" name="name" />
+            <div class="col-md-12 ">
+                <div class="field">
+                    <input autocomplete="off" placeholder="Soyad" type="text" id="name" name="name" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="field">
-                <input autocomplete="off" placeholder="Ata adı" type="text" id="name" name="name" />
+            <div class="col-md-12 ">
+                <div class="field">
+                    <input autocomplete="off" placeholder="Ata adı" type="text" id="name" name="name" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="field">
-                <input autocomplete="off" type="date" id="birthdate" name="birthdate" />
+            <div class="col-md-12 ">
+                <div class="field">
+                    <input autocomplete="off" type="date" id="birthdate" name="birthdate" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="field">
-                <input autocomplete="off" placeholder="Nömrə" type="text" id="phone" name="phone" />
+            <div class="col-md-12 ">
+                <div class="field">
+                    <input autocomplete="off" placeholder="Nömrə" type="text" id="phone" name="phone" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="field">
-                <input autocomplete="off" placeholder="Email" type="email" id="email" name="email" />
+            <div class="col-md-12 ">
+                <div class="field">
+                    <input autocomplete="off" placeholder="Email" type="email" id="email" name="email" />
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 ">
-            <div class="field">
-                <mat-form-field>
-                    <mat-select>
-                        <mat-option *ngFor="let item of firms" [value]="item.key">{{item.value}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
+            <div class="col-md-12 ">
+                <div class="field">
+                    <mat-form-field>
+                        <mat-select>
+                            <mat-option *ngFor="let item of firms" [value]="item.key">{{item.value}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="col-md-7 " style="position: relative;">
-        <div class="bg-white py-2 " style="height: 100%;">
+    <div class="col-md-7 p-0 " style="position: relative; border-left: 1px solid #dedede; border-right: 1px solid #dedede;">
+        <div class="bg-white pt-2 pb-2 " style="height: 100%; height: 75vh; overflow: auto;">
             <div class="row">
                 <div class="col-md-9">
                     <div class="field">
@@ -75,25 +78,20 @@
                 </div>
             </div>
 
-            <div class="">
+            <div class="" *ngIf="labelsArray.length">
                 <div class="row">
                     <div class=" col-lg-12">
                         <div class="field-headers">
-                            Etiketlər:
+                            <i class="me-2 fa-regular fa-tag"></i>    Etiketlər:
                         </div>
                     </div>
                 </div>
                 <div class="row py-2">
-                    <div class="col-md-12 d-flex ">
-                        <div class="labels">
-                            Əməliyyat
-                            <span class="ms-2">
-                                x
-                            </span>
-                        </div>
-                        <div class="labels" style="background-color: #F9D923;">
-                            Mualice
-                            <span class="ms-2">
+                    <div class="col-md-12 d-flex">
+                        <div class="labels" *ngFor="let item of labelsArray; let i =index"
+                            [style.background-color]="item.color">
+                            {{item.name}}
+                            <span (click)="handleDeleteLabels(i)" class="ms-2">
                                 x
                             </span>
                         </div>
@@ -101,32 +99,37 @@
                 </div>
             </div>
 
-            <div class="mt-2">
+            <div class="mt-2" *ngIf="workList.length">
                 <div class="row">
                     <div class=" col-lg-12">
                         <div class="field-headers">
-                            Görüləcək işlərin siyahısı:
+                            <i class="me-2 fa-regular fa-list-check"></i>   Görüləcək işlərin siyahısı:
                         </div>
                     </div>
                 </div>
+
                 <div class="row py-2">
-                    <div class="col-md-12 row ">
+                    <form [formGroup]="workForm">
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="field checklist">
-                                    <span class="check-btn">
-                                        <mat-checkbox type="checkbox" class="mt-1 example-margin"
-                                            (click)="$event.stopPropagation()" (change)="handleSelectCheck($event)">
-                                        </mat-checkbox>
-                                    </span>
-                                    <input autocomplete="off" type="text" id="value" name="value" />
-                                    <span type="button" class="delete-btn">
-                                        x
-                                    </span>
+                            <div class="col-md-12 p-0" style="margin: 0;" formArrayName="workList"
+                                *ngFor="let t of workList.controls; let i = index; last as isLast; first as isFirst">
+                                <div class="col-md-12" style="margin: 0 !important;" [formGroupName]="i">
+                                    <div class="field checklist">
+                                        <span class="check-btn">
+                                            <mat-checkbox formControlName="isCheck" type="checkbox"
+                                                class="mt-1 example-margin" (click)="$event.stopPropagation()">
+                                            </mat-checkbox>
+                                        </span>
+                                        <input autocomplete="off" formControlName="value" type="text" id="value"
+                                            name="value" />
+                                        <span (click)="handleDeleteChecklist(i)" type="button" class="delete-btn">
+                                            x
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -134,13 +137,12 @@
                 <div class="row">
                     <div class=" col-lg-12">
                         <div class="field-headers">
-                            Fayllar:
+                            <i class="fa-sharp fa-regular fa-paperclip"></i>   Fayllar:
                         </div>
                     </div>
                 </div>
                 <div class="row py-2">
                     <div class="col-md-12 ">
-
                         <ul class="p-0 m-0 col-lg-12">
                             <li *ngFor="let item of fileArray; let i = index" class="mt-2 col-lg-12 file-labels row">
                                 <div class="col-md-9">
@@ -169,25 +171,31 @@
 
     <div class="col-md-2 pt-2 bg-white">
         <div class="row">
+            Add to card
+        </div>
+        <div class="row">
             <div class="col-md-12 p-0">
                 <button class="field-btns" [matMenuTriggerFor]="menu">
-                    <i class="fa-solid fa-tag"></i> Etiket
+                    <i class="me-2 fa-regular fa-tag"></i> Etiket
                 </button>
 
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item style="background-color: #31AA75;font-weight: 500; color: #fff;">
+                    <button (click)="handleAddLabel({color: '#31AA75', name: 'Müainə'})" mat-menu-item
+                        style="background-color: #31AA75;font-weight: 500; color: #fff;">
                         <i class="me-2 fa-regular fa-stethoscope"></i> Müainə
                     </button>
-                    <button mat-menu-item style="background-color: #F9D923;font-weight: 500;color: #fff;">
+                    <button (click)="handleAddLabel({color: '#F9D923', name: 'Müalicə'})" mat-menu-item
+                        style="background-color: #F9D923;font-weight: 500;color: #fff;">
                         <i class="me-2 fa-sharp fa-regular fa-syringe"></i> Müalicə
                     </button>
-                    <button mat-menu-item style="background-color: #FF0000;font-weight: 500;color: #fff;">
+                    <button (click)="handleAddLabel({color: '#FF0000', name: 'Əməliyyat'})" mat-menu-item
+                        style="background-color: #FF0000;font-weight: 500;color: #fff;">
                         <i class="me-2 fa-regular fa-scalpel-line-dashed"></i> Əməliyyat
                     </button>
                 </mat-menu>
             </div>
             <div class="col-md-12 p-0">
-                <button class="field-btns">
+                <button class="field-btns" (click)="handleAddChecklist()">
                     <i class="fa-regular fa-square-check"></i> Siyahı
                 </button>
             </div>
@@ -208,7 +216,7 @@
 
 <div class="row py-3 justify-content-end">
     <div class="col-md-2 p-0">
-        <button class="save-btn col-md-12">
+        <button (click)="handleSave()" class="save-btn col-md-12">
             Yadda saxla
         </button>
     </div>
