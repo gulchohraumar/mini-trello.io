@@ -45,7 +45,6 @@ div {
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #fff;
@@ -199,4 +198,21 @@ a{
 
 .file-labels a{
   font-size: 13px;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  margin: 0  !important;
+  padding: 0 !important;
+  min-width: 800px;
+  font-family: 'Poppins', sans-serif;
+}
+
+// li{
+//   min-width: 200px;
+// }
+
+.common-list{
+  display: block;
 }

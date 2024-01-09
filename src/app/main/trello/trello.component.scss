@@ -1,15 +1,11 @@
 .example-list {
-  border: solid 1px #ccc;
+  // border: solid 1px #ccc;
   min-height: 60px;
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
   background: white;
   border-radius: 4px;
-  overflow: hidden;
-}
-
-.example-list:first-child {
-  border: none;
+  // overflow: hidden;
 }
 
 .headers {
@@ -20,13 +16,13 @@
 }
 
 .example-box {
-  max-width: 300px;
+  // width: 150px;
   padding: 20px 10px;
   border-right: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  // align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
@@ -68,4 +64,62 @@
   padding-right: 5px;
   font-size: 10px;
   color: #ff5500;
+}
+
+
+div {
+  font-family: Lato;
+}
+
+.board {
+  width: 700px;
+  border: 1px solid saddlebrown;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.lane {
+  border: 1px solid black;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  padding: 0.75em 1.5em 0.75em 1em;
+  margin-bottom: 0.5em;
+  background: #cfcfcf;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-family: "Roboto Slab", sans-serif;
+}
+.task:hover {
+  outline: 3px solid #205081;
+}
+
+.heading {
+  padding: 1em 0;
+  font-weight: bolder;
+  background: #ffffff;
+  color: #000000;
+  border-bottom: 0.5em solid #ffffff;
+  text-align: center;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.todo {
+  background: #3572b0;
+}
+
+.doing {
+  background: #f6c342;
+}
+
+.done {
+    background: #14892c;
+}
+
+.drag-dt{
+  width: 100%;
 }

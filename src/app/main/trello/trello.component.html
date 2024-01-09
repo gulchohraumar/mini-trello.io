@@ -1,10 +1,10 @@
-<div class="row justify-content-center align-items-center p-5">
+<!-- <div class="row justify-content-center align-items-center p-5">
   <div class="example-list p-0">
     <div class="headers example-box justify-content-center" *ngFor="let day of days"
       [style.background-color]="day.color">
       {{day.name}}
     </div>
-  </div>
+  </div> 
 
   <div cdkDropListGroup class="p-0">
     <div *ngFor="let item of tasks; let i= index" cdkDropList cdkDropListOrientation="horizontal"
@@ -17,6 +17,29 @@
         <span class="date-content">
           {{timePeriod.date}}
         </span>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="my-3 col-sm-11 mx-auto" style="overflow: auto;  border: 1px solid #dedede;">
+  <div style="min-width: 980px;">
+    <div cdkDropListGroup>
+      <div class="example-container">
+        <ul>
+          <li class="headers example-box justify-content-center" *ngFor="let day of days"
+            [style.background-color]="day.color">
+            {{day.name}}
+          </li>
+        </ul>
+        
+        <div *ngFor="let item of fieldArray;let i =index" cdkDropList cdkDropListOrientation="horizontal"  
+          [cdkDropListData]="item.arr" class="example-list d-flex bg-danger" (cdkDropListDropped)="drop(i,$event)" (cdkDropListExited)="exited($event)"  >
+          <div class="example-box" [style.background-color]="item.color">{{item.clock}}</div>
+          <div class="example-box p-0 bg-warning"  *ngFor="let item of item.arr" >
+           <span class="drag-dt " cdkDrag  [cdkDragData]="item" (click)="handleOpenAdd()" >{{item.name}}</span> 
+          </div>
+        </div>
       </div>
     </div>
   </div>
