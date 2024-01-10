@@ -1,11 +1,16 @@
 <div class="row justify-content-between bg-white">
-    <div class="col-md-12 py-2 d-flex">
-        <div class=" header-name-con " style="position: relative;">
-            <i class="fa-regular fa-credit-card-front"></i>
-            <input class="header-name" type="text">
+    <div class="col-md-12 px-0 header-con d-flex">
+        <div class="header-name-con" style="position: relative;">
+            <span>
+                <i class="fa-regular fa-credit-card-front"></i>
+            </span>
+            <input class="header-name" placeholder="Type name..." type="text">
         </div>
-        <img class="close ms-3" type="button" src="../../../../assets/operations/cancel-x.svg"
-            (click)="onCloseDialog()">
+        <div style="position: relative;"> 
+            <span class="close-btn" type="button" (click)="onCloseDialog()">
+                <i class="fa-solid fa-xmark" ></i>
+            </span>
+        </div>
     </div>
 </div>
 
@@ -54,7 +59,8 @@
         </div>
     </div>
 
-    <div class="col-md-7 p-0 " style="position: relative; border-left: 1px solid #dedede; border-right: 1px solid #dedede;">
+    <div class="col-md-7 p-0 "
+        style="position: relative; border-left: 1px solid #dedede; border-right: 1px solid #dedede;">
         <div class="bg-white pt-2 pb-2 " style="height: 100%; height: 75vh; overflow: auto;">
             <div class="row">
                 <div class="col-md-9">
@@ -82,7 +88,7 @@
                 <div class="row">
                     <div class=" col-lg-12">
                         <div class="field-headers">
-                            <i class="me-2 fa-regular fa-tag"></i>    Etiketlər:
+                            <i class="me-2 fa-regular fa-tag"></i> Etiketlər:
                         </div>
                     </div>
                 </div>
@@ -103,7 +109,7 @@
                 <div class="row">
                     <div class=" col-lg-12">
                         <div class="field-headers">
-                            <i class="me-2 fa-regular fa-list-check"></i>   Görüləcək işlərin siyahısı:
+                            <i class="me-2 fa-regular fa-list-check"></i> Görüləcək işlərin siyahısı:
                         </div>
                     </div>
                 </div>
@@ -137,7 +143,7 @@
                 <div class="row">
                     <div class=" col-lg-12">
                         <div class="field-headers">
-                            <i class="fa-sharp fa-regular fa-paperclip"></i>   Fayllar:
+                            <i class="fa-sharp fa-regular fa-paperclip"></i> Fayllar:
                         </div>
                     </div>
                 </div>
@@ -214,8 +220,8 @@
     </div>
 </div>
 
-<div class="row py-3 justify-content-end">
-    <div class="col-md-2 p-0">
+<div class="row py-3 justify-content-end" style="background: #fff; border-top: 1px solid #dedede;">
+    <div class="col-md-2 ps-0">
         <button (click)="handleSave()" class="save-btn col-md-12">
             Yadda saxla
         </button>

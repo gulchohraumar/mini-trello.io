@@ -1,14 +1,13 @@
 .example-list {
-  // border: solid 1px #ccc;
-  min-height: 60px;
-  // display: flex;
-  // flex-direction: row;
+  min-height: 100%;
+  height: min-content !important;
+  /* height: 75px !important; */
   background: white;
   border-radius: 4px;
-  // overflow: hidden;
 }
 
 .headers {
+  position: relative;
   cursor: default !important;
   font-size: 16px !important;
   font-weight: 600 !important;
@@ -17,8 +16,8 @@
 
 .example-box {
   // width: 150px;
+  // border-radius: 10px;
   padding: 20px 10px;
-  border-right: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: row;
@@ -30,6 +29,16 @@
   font-size: 14px;
   flex-grow: 1;
   flex-basis: 0;
+  min-height: 75px !important;
+}
+
+.example-box-border {
+  border: 1px solid #ccc;
+}
+
+::ng-deep .cdk-drop-list-dragging {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .cdk-drag-preview {
@@ -66,7 +75,6 @@
   color: #ff5500;
 }
 
-
 div {
   font-family: Lato;
 }
@@ -94,6 +102,7 @@ div {
   font-size: 0.85em;
   font-family: "Roboto Slab", sans-serif;
 }
+
 .task:hover {
   outline: 3px solid #205081;
 }
@@ -117,9 +126,81 @@ div {
 }
 
 .done {
-    background: #14892c;
+  background: #14892c;
 }
 
-.drag-dt{
-  width: 100%;
+.list-day {
+  height: 65px !important;
+} 
+
+.list-day:not(:first-child) {
+  background-color: #4643D2;
+}
+
+.list-day:not(:first-child),
+.list-day:not(:last-child) {
+  border-right: 2px solid #ccc;
+}
+
+.list-day:first-child {
+  border: none;
+}
+
+.list-day:last-child {
+  border-top-right-radius: 10px
+}
+
+.list-day:nth-child(2) {
+  border-top-left-radius: 10px
+}
+
+.list-day .calendar-con {
+  border-top-left-radius: unset;
+}
+
+.list-day:nth-child(2) .calendar-con {
+  border-top-left-radius: 9px
+}
+
+.item-date {
+  font-size: 10px;
+  color: red;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.item-cell {
+  position: relative;
+  font-size: 14px;
+}
+
+.calendar-con {
+  background: #F37600;
+  padding: 0 6px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 9px;
+}
+
+.clock-con {
+  font-size: 13px;
+  padding: 3px 7px;
+  background-color: #4643D2;
+}
+
+.border-bottoms {
+  border-bottom: 1px solid #dedede;
+}
+
+.clock-text {
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+  background: #8989D3;
+  border: 1px solid #4643D2;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }

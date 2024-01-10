@@ -1,6 +1,7 @@
 ::ng-deep.mat-dialog-container {
     padding: 0 !important;
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: 93vh;
     background-color: transparent;
     box-shadow: none;
@@ -212,31 +213,67 @@
 }
 
 .header-name {
-    outline-color: cornflowerblue;
+    outline: none;
     border: none;
     border-bottom: 1px solid #9c9c9c;
     width: 100%;
-    padding: 5px 7px;
-    padding-left: 30px;
+    padding: 10px;
+    padding-left: 37px;
     font-size: 20px;
-    color: cornflowerblue;
-    font-weight: 600;
-    // border-radius: 8px;
+    color: #fff;
+    font-weight: 400;
 }
 
 .header-name-con {
-    width: 97%;
+    width: 100%;
+}
+
+.header-name::placeholder{
+    font-size: 15px;
+    color: #e2e2e28e;
+}
+ 
+.header-name-con span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #F37600;
+    z-index: 9;
+    background: transparent;
+    width: 33px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
 }
 
 .header-name-con i{
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    color: cornflowerblue;
+    color: #F37600;
+}
+
+.header-con, .header-name-con input{
+    background-color: #4643D2;
+    position: relative;
 }
 
 .close {
     width: 15px;
+}
+
+.close-btn{
+    background: transparent;
+    padding: 0px 6px 0 12px;
+    width: 42px;
+    font-size: 27px;
+    color: #F37600;
+    height: 100%;
+    text-align: eft;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 .delete-btn {
@@ -274,7 +311,7 @@
     position: absolute;
     left: 3px;
     top: 0px;
-    color: #000;
+    color: #5252a6;
 }
 
 .doc-file .file {
@@ -283,6 +320,7 @@
     background-color: transparent !important;
     height: 20px !important;
     border: none !important;
+    color: #5252a6;
 }
 
 .delete-file-btn{
