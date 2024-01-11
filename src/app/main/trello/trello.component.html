@@ -2,9 +2,9 @@
   <div style="min-width: 980px;">
     <div cdkDropListGroup>
       <div class="example-container">
-        <ul>
-          <li class="headers example-box justify-content-center list-day"  *ngFor="let day of days;let i = index" >
-            <span *ngIf="i !=0" class="me-2 text-white calendar-con" >
+        <ul class="d-flex">
+          <li class="headers example-box justify-content-center list-day" *ngFor="let day of days;let i = index">
+            <span *ngIf="i !=0" class="me-2 text-white calendar-con">
               <i class="fa-duotone fa-calendar-days"></i>
             </span>
             {{day.name}}
@@ -14,18 +14,17 @@
         <div *ngFor="let item of fieldArray;let i =index" cdkDropList cdkDropListOrientation="horizontal"
           [cdkDropListData]="item.arr" class="example-list mb-1 row" (cdkDropListDropped)="drop(i,$event)"
           (cdkDropListExited)="exited($event)">
-          <div class="example-box p-0" >
+          <div class="example-box p-0">
             <span class="col-sm-12 justify-content-center align-items-center d-flex clock-text">
-              <span class="me-2 text-white calendar-con clock-con"  >
+              <span class="me-2 text-white calendar-con clock-con">
                 <i class="fa-sharp fa-regular fa-clock"></i>
               </span>
               {{item.clock}}
             </span>
           </div>
-          <div class="example-box p-0 example-box-border "
-            *ngFor="let item of item.arr">
-            <span class="item-cell col-sm-12 ps-2 pt-2" cdkDrag [cdkDragData]="item"
-              (click)="handleOpenAdd()">
+          <div class="example-box p-0 example-box-border " *ngFor="let item of item.arr">
+            <span class="status-badge" [style.background-color]="item.statusColor"> </span>
+            <span class="item-cell col-sm-12 ps-2 pt-3" cdkDrag [cdkDragData]="item" (click)="handleOpenAdd()">
               {{item.name}}
               <span class="item-date">
                 {{item.date}}

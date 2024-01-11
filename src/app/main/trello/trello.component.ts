@@ -57,31 +57,38 @@ export class TrelloComponent implements OnInit {
       clock: '09:00-10:00',
       arr: [{
         name: 'lorem upsum bla bla test lorem ',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: '#31AA75'
       },
       {
         name: 'llllll',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: 'F9D923'
       },
       {
         name: 'ddddddd',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: '#31AA75'
       },
       {
         name: 'sssssss',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: '#31AA75'
       },
       {
         name: 'nnnnnn',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: 'red'
       },
       {
         name: 'ggggg',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: '#F9D923'
       },
       {
         name: 'wwwwww',
-        date: '01-01-2024'
+        date: '01-01-2024',
+        statusColor: '#F9D923'
       },
       ]
     },
@@ -90,31 +97,38 @@ export class TrelloComponent implements OnInit {
       arr: [
         {
           name: 'sfsf',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: '#F9D923'
         },
         {
           name: 'fhfh',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: '#F9D923'
         },
         {
           name: 'jhjhjhjh',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: '#31AA75'
         },
         {
           name: 'klkkl',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: 'red'
         },
         {
           name: 'twtwtwt',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: '#F9D923'
         },
         {
           name: 'rwegdf',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: '#31AA75'
         },
         {
           name: 'trdfgv',
-          date: '01-01-2024'
+          date: '01-01-2024',
+          statusColor: 'red'
         },
       ]
     }

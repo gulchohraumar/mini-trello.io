@@ -22,7 +22,11 @@ export class NewTaskComponent implements OnInit {
     {
       key: 0,
       value: 'Secilmeyib'
-    }
+    },
+    // {
+    //   key: 1,
+    //   value: 'Secilmeyib'
+    // },
   ];
 
   labelsArray: any[] = [];

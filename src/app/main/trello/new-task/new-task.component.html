@@ -6,50 +6,69 @@
             </span>
             <input class="header-name" placeholder="Type name..." type="text">
         </div>
-        <div style="position: relative;"> 
+        <div style="position: relative;">
             <span class="close-btn" type="button" (click)="onCloseDialog()">
-                <i class="fa-solid fa-xmark" ></i>
+                <i class="fa-solid fa-xmark"></i>
             </span>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-3 pt-2 row bg-white">
-        <div class="">
-            <div class="col-md-12 ">
+    <div class="col-md-3 pt-2 bg-white">
+        <div class="row">
+            <div class="col-md-12 p-0">
                 <div class="field">
-                    <input autocomplete="off" placeholder="Ad" type="text" id="name" name="name" />
+                    <label for="name" title="Ad" data-title="Ad"></label>
+                    <input autocomplete="off" type="text" id="name" name="name" />
                 </div>
             </div>
-            <div class="col-md-12 ">
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-0">
                 <div class="field">
-                    <input autocomplete="off" placeholder="Soyad" type="text" id="name" name="name" />
+                    <label for="lastname" title="Soyad" data-title="Soyad"></label>
+                    <input autocomplete="off" type="text" id="lastname" name="lastname" />
                 </div>
             </div>
-            <div class="col-md-12 ">
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-0">
                 <div class="field">
-                    <input autocomplete="off" placeholder="Ata adı" type="text" id="name" name="name" />
+                    <label for="fatherName" title="Ata adı" data-title="Ata adı"></label>
+                    <input autocomplete="off" type="text" id="fatherName" name="fatherName" />
                 </div>
             </div>
-            <div class="col-md-12 ">
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-0">
                 <div class="field">
+                    <label for="birthdate" title="Doğum tarixi" data-title="Doğum tarixi"></label>
                     <input autocomplete="off" type="date" id="birthdate" name="birthdate" />
                 </div>
             </div>
-            <div class="col-md-12 ">
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-0">
                 <div class="field">
-                    <input autocomplete="off" placeholder="Nömrə" type="text" id="phone" name="phone" />
+                    <label for="phone" title="Nömrə" data-title="Nömrə"></label>
+                    <input autocomplete="off" type="text" id="phone" name="phone" />
                 </div>
             </div>
-            <div class="col-md-12 ">
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-0">
                 <div class="field">
-                    <input autocomplete="off" placeholder="Email" type="email" id="email" name="email" />
+                    <label for="email" title="Email" data-title="Email"></label>
+                    <input autocomplete="off" type="email" id="email" name="email" />
                 </div>
             </div>
-            <div class="col-md-12 ">
+        </div>
+        <div class="row">
+            <div class="col-md-12 p-0 select">
                 <div class="field">
                     <mat-form-field>
+                        <label for="select" title="Seçim" data-title="Seçim"></label>
                         <mat-select>
                             <mat-option *ngFor="let item of firms" [value]="item.key">{{item.value}}</mat-option>
                         </mat-select>
@@ -65,12 +84,14 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="field">
-                        <input autocomplete="off" placeholder="Xidmət" type="text" id="expence" name="expence" />
+                        <label for="expence" title="Xidmət" data-title="Xidmət"></label>
+                        <input autocomplete="off" type="text" id="expence" name="expence" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="field">
-                        <input autocomplete="off" placeholder="Tarix" type="datetime-local" id="date" name="date" />
+                        <label for="date" title="Tarix" data-title="Tarix"></label>
+                        <input autocomplete="off" type="datetime-local" id="date" name="date" />
                     </div>
                 </div>
             </div>
@@ -78,8 +99,8 @@
             <div class="row">
                 <div class="col-md-12 ">
                     <div class="field">
-                        <textarea placeholder="Açıqlama" name="description" id="description" cols="30"
-                            rows="10"></textarea>
+                        <label for="description" title="Açıqlama" data-title="Açıqlama"></label>
+                        <textarea name="description" id="description" cols="30" rows="10"></textarea>
                     </div>
                 </div>
             </div>
@@ -129,7 +150,7 @@
                                         <input autocomplete="off" formControlName="value" type="text" id="value"
                                             name="value" />
                                         <span (click)="handleDeleteChecklist(i)" type="button" class="delete-btn">
-                                            x
+                                            <i class="fa-regular fa-trash-can"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -147,80 +168,98 @@
                         </div>
                     </div>
                 </div>
-                <div class="row py-2">
-                    <div class="col-md-12 ">
-                        <ul class="p-0 m-0 col-lg-12">
-                            <li *ngFor="let item of fileArray; let i = index" class="mt-2 col-lg-12 file-labels row">
-                                <div class="col-md-9">
-                                    <span>
-                                        {{item.name}}
-                                    </span>
-                                </div>
-                                <div class="col-md-3 ps-0 text-end">
-                                    <a [href]="item.url" target="_blank" class="me-1">
-                                        <i class="fa-sharp fa-regular fa-eye"></i> bax
-                                    </a>
-                                    <span class="ms-2" style="font-size: 12px;">
-                                        {{item.date}}
-                                    </span>
-                                    <span (click)="handleDeleteFile(i)" type="button" class="ms-3 delete-file-btn">
-                                        x
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="py-2 px-1">
+                    <ul class="row col-lg-12 px-2" style="min-width: auto !important;">
+                        <li *ngFor="let item of fileArray; let i = index"
+                            class="mt-2 py-1 col-lg-12 align-items-center file-labels row">
+                            <div class="col-lg-9">
+                                <span>
+                                    {{item.name}}
+                                </span>
+                            </div>
+                            <div class="col-lg-3  ps-0 text-end">
+                                <a [href]="item.url" target="_blank" class="me-1">
+                                    <i class="fa-sharp fa-regular fa-eye"></i> bax
+                                </a>
+                                <span class="ms-2" style="font-size: 12px;">
+                                    {{item.date}}
+                                </span>
+                                <span (click)="handleDeleteFile(i)" type="button" class="ms-3 delete-file-btn">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="col-md-2 pt-2 bg-white">
-        <div class="row">
-            Add to card
+        <div class="">
+            <div class="operation-headers">
+                <i style="font-size: 16px;" class="me-1 fa-regular fa-layer-plus"></i> Əlavə et:
+            </div>
+            <div class="row mt-1">
+                <div class="col-md-12 p-0">
+                    <button class="field-btns" [matMenuTriggerFor]="menu">
+                        <i class="me-2 fa-regular fa-tag"></i> Etiket
+                    </button>
+
+                    <mat-menu #menu="matMenu">
+                        <button (click)="handleAddLabel({color: '#31AA75', name: 'Müainə'})" mat-menu-item
+                            style="background-color: #31AA75;font-weight: 500; color: #fff;">
+                            <i class="me-2 fa-regular fa-stethoscope"></i> Müainə
+                        </button>
+                        <button (click)="handleAddLabel({color: '#F9D923', name: 'Müalicə'})" mat-menu-item
+                            style="background-color: #F9D923;font-weight: 500;color: #fff;">
+                            <i class="me-2 fa-sharp fa-regular fa-syringe"></i> Müalicə
+                        </button>
+                        <button (click)="handleAddLabel({color: '#FF0000', name: 'Əməliyyat'})" mat-menu-item
+                            style="background-color: #FF0000;font-weight: 500;color: #fff;">
+                            <i class="me-2 fa-regular fa-scalpel-line-dashed"></i> Əməliyyat
+                        </button>
+                    </mat-menu>
+                </div>
+                <div class="col-md-12 p-0">
+                    <button class="field-btns" (click)="handleAddChecklist()">
+                        <i class="fa-regular fa-square-check"></i> Siyahı
+                    </button>
+                </div>
+                <div class="col-md-12 p-0">
+                    <button class="field-btns ">
+                        <div class="field m-0 p-0 doc-file">
+                            <i class="fa-sharp fa-regular fa-paperclip"></i>
+                            <input (change)="uploadFile($event)" type="file" title="" id="fileContract"
+                                name="fileContract" class="selectfileInputPay" aria-label="0.0" />
+                            <input class="file" type="text" value="Fayl" disable />
+                        </div>
+                    </button>
+
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <button class="field-btns" [matMenuTriggerFor]="menu">
-                    <i class="me-2 fa-regular fa-tag"></i> Etiket
-                </button>
 
-                <mat-menu #menu="matMenu">
-                    <button (click)="handleAddLabel({color: '#31AA75', name: 'Müainə'})" mat-menu-item
-                        style="background-color: #31AA75;font-weight: 500; color: #fff;">
-                        <i class="me-2 fa-regular fa-stethoscope"></i> Müainə
-                    </button>
-                    <button (click)="handleAddLabel({color: '#F9D923', name: 'Müalicə'})" mat-menu-item
-                        style="background-color: #F9D923;font-weight: 500;color: #fff;">
-                        <i class="me-2 fa-sharp fa-regular fa-syringe"></i> Müalicə
-                    </button>
-                    <button (click)="handleAddLabel({color: '#FF0000', name: 'Əməliyyat'})" mat-menu-item
-                        style="background-color: #FF0000;font-weight: 500;color: #fff;">
-                        <i class="me-2 fa-regular fa-scalpel-line-dashed"></i> Əməliyyat
-                    </button>
-                </mat-menu>
+        <div class="mt-3">
+            <div class="operation-headers">
+                <i class="fa-solid fa-list-check me-1"></i>  Görülən işlər:
             </div>
-            <div class="col-md-12 p-0">
-                <button class="field-btns" (click)="handleAddChecklist()">
-                    <i class="fa-regular fa-square-check"></i> Siyahı
-                </button>
+            <div class="row mt-1">
+                <ul class="flex-column works">
+                    <li>
+                        <span>1.</span> Ağartma
+                    </li>
+                    <li>
+                        <span>2.</span> Plomp
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-12 p-0">
-                <button class="field-btns ">
-                    <div class="field m-0 p-0 doc-file">
-                        <i class="fa-sharp fa-regular fa-paperclip"></i>
-                        <input (change)="uploadFile($event)" type="file" title="" id="fileContract" name="fileContract"
-                            class="selectfileInputPay" aria-label="0.0" />
-                        <input class="file" type="text" value="Fayl" disable />
-                    </div>
-                </button>
 
-            </div>
         </div>
     </div>
 </div>
 
-<div class="row py-3 justify-content-end" style="background: #fff; border-top: 1px solid #dedede;">
+<div class="row py-2 justify-content-end" style="background: #fff; border-top: 1px solid #dedede;">
     <div class="col-md-2 ps-0">
         <button (click)="handleSave()" class="save-btn col-md-12">
             Yadda saxla

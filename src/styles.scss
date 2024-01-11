@@ -60,6 +60,10 @@ a{
   text-decoration: none !important;
 }
 
+.select .field label::before{
+  left: 2px;
+}
+
 .field label::before {
   content: attr(title);
   position: absolute;
@@ -77,9 +81,8 @@ a{
 
 .field {
   position: relative;
-  margin: 5px 0;
+  margin: 7px 0;
 
-  // padding: 0 10px;
   input,
   select,
   .mat-form-field-type-mat-select,
@@ -98,12 +101,12 @@ a{
 
     &:focus {
       outline: 0;
-      border-color: cornflowerblue;
+      border-color: #4643D2;
     }
 
     &:focus+label::before {
-      color: #136481;
-      border-color: #136481;
+      color: #4643D2;
+      border-color: #4643D2;
     }
   }
 
@@ -127,12 +130,12 @@ a{
 
     &:focus {
       outline: 0;
-      border-color: cornflowerblue;
+      border-color: #4643D2;
     }
 
     &:focus+label::before {
-      color: #136481;
-      border-color: cornflowerblue;
+      color: #4643D2;
+      border-color: #4643D2;
     }
   }
 }
@@ -144,7 +147,7 @@ a{
   color: #5252a6;
   border-radius: 5px;
   padding: 5px 15px;
-  margin: 5px 0 10px 0;
+  margin: 5px 0 2px 0;
   text-align: start;
   font-size: 15px;
   transition: 0.4s;
@@ -204,12 +207,14 @@ a{
 
 ul{
   list-style: none;
-  display: flex;
+  // display: flex;
   margin: 0  !important;
   padding: 0 !important;
   min-width: 800px;
   font-family: 'Poppins', sans-serif;
 }
+
+
 
 // li{
 //   min-width: 200px;

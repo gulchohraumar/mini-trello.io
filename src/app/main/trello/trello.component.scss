@@ -15,6 +15,7 @@
 }
 
 .example-box {
+  position: relative;
   // width: 150px;
   // border-radius: 10px;
   padding: 20px 10px;
@@ -183,6 +184,16 @@ div {
   left: 0px;
   border-bottom-right-radius: 5px;
   border-top-left-radius: 9px;
+}
+
+.status-badge{
+  position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    right: 10px;
+    top: 5px;
 }
 
 .clock-con {
