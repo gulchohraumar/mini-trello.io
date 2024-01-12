@@ -1,266 +1,293 @@
-<div class="row justify-content-between bg-white">
-    <div class="col-md-12 px-0 header-con d-flex">
-        <div class="header-name-con" style="position: relative;">
-            <span>
-                <i class="fa-regular fa-credit-card-front"></i>
-            </span>
-            <input class="header-name" placeholder="Type name..." type="text">
-        </div>
-        <div style="position: relative;">
-            <span class="close-btn" type="button" (click)="onCloseDialog()">
-                <i class="fa-solid fa-xmark"></i>
-            </span>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-3 pt-2 bg-white">
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="field">
-                    <label for="name" title="Ad" data-title="Ad"></label>
-                    <input autocomplete="off" type="text" id="name" name="name" />
-                </div>
+<form [formGroup]="formGroup">
+    <div class="row justify-content-between bg-white">
+        <div class="col-md-12 px-0 header-con d-flex">
+            <div class="header-name-con" style="position: relative;">
+                <span>
+                    <i class="fa-regular fa-credit-card-front"></i>
+                </span>
+                <input class="header-name" formControlName="headerName" placeholder="Type name..." type="text">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="field">
-                    <label for="lastname" title="Soyad" data-title="Soyad"></label>
-                    <input autocomplete="off" type="text" id="lastname" name="lastname" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="field">
-                    <label for="fatherName" title="Ata adı" data-title="Ata adı"></label>
-                    <input autocomplete="off" type="text" id="fatherName" name="fatherName" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="field">
-                    <label for="birthdate" title="Doğum tarixi" data-title="Doğum tarixi"></label>
-                    <input autocomplete="off" type="date" id="birthdate" name="birthdate" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="field">
-                    <label for="phone" title="Nömrə" data-title="Nömrə"></label>
-                    <input autocomplete="off" type="text" id="phone" name="phone" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="field">
-                    <label for="email" title="Email" data-title="Email"></label>
-                    <input autocomplete="off" type="email" id="email" name="email" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 p-0 select">
-                <div class="field">
-                    <mat-form-field>
-                        <label for="select" title="Seçim" data-title="Seçim"></label>
-                        <mat-select>
-                            <mat-option *ngFor="let item of firms" [value]="item.key">{{item.value}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
+            <div style="position: relative;">
+                <span class="close-btn" type="button" (click)="onCloseDialog()">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
             </div>
         </div>
     </div>
 
-    <div class="col-md-7 p-0 "
-        style="position: relative; border-left: 1px solid #dedede; border-right: 1px solid #dedede;">
-        <div class="bg-white pt-2 pb-2 " style="height: 100%; height: 75vh; overflow: auto;">
+    <div class="row">
+        <div class="col-md-3 pt-2 bg-white">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12 p-0">
                     <div class="field">
-                        <label for="expence" title="Xidmət" data-title="Xidmət"></label>
-                        <input autocomplete="off" type="text" id="expence" name="expence" />
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="field">
-                        <label for="date" title="Tarix" data-title="Tarix"></label>
-                        <input autocomplete="off" type="datetime-local" id="date" name="date" />
+                        <i *ngIf="(FF['name'].errors?.['required'] && !isFormValid) || (FF['name'].invalid && !isFormValid)"
+                            class="invalid-icon fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <label for="name" title="Ad" data-title="Ad"></label>
+                        <input autocomplete="off"
+                            [ngClass]="{'invalid': ((FF['name'].errors?.['required'] && !isFormValid) || (FF['name'].invalid && !isFormValid))}"
+                            formControlName="name" type="text" id="name" name="name" />
                     </div>
                 </div>
             </div>
-
             <div class="row">
-                <div class="col-md-12 ">
+                <div class="col-md-12 p-0">
                     <div class="field">
-                        <label for="description" title="Açıqlama" data-title="Açıqlama"></label>
-                        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                        <i *ngIf="(FF['lastname'].errors?.['required'] && !isFormValid) || (FF['lastname'].invalid && !isFormValid)"
+                            class="invalid-icon fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <label for="lastname" title="Soyad" data-title="Soyad"></label>
+                        <input autocomplete="off"
+                            [ngClass]="{'invalid': ((FF['lastname'].errors?.['required'] && !isFormValid) || (FF['lastname'].invalid && !isFormValid))}"
+                            formControlName="lastname" type="text" id="lastname" name="lastname" />
                     </div>
                 </div>
             </div>
-
-            <div class="" *ngIf="labelsArray.length">
-                <div class="row">
-                    <div class=" col-lg-12">
-                        <div class="field-headers">
-                            <i class="me-2 fa-regular fa-tag"></i> Etiketlər:
-                        </div>
-                    </div>
-                </div>
-                <div class="row py-2">
-                    <div class="col-md-12 d-flex">
-                        <div class="labels" *ngFor="let item of labelsArray; let i =index"
-                            [style.background-color]="item.color">
-                            {{item.name}}
-                            <span (click)="handleDeleteLabels(i)" class="ms-2">
-                                x
-                            </span>
-                        </div>
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <div class="field">
+                        <label for="fatherName" title="Ata adı" data-title="Ata adı"></label>
+                        <input autocomplete="off" type="text" formControlName="fatherName" id="fatherName"
+                            name="fatherName" />
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <div class="field">
+                        <label for="birthdate" title="Doğum tarixi" data-title="Doğum tarixi"></label>
+                        <input autocomplete="off" formControlName="birthdate" type="date" id="birthdate"
+                            name="birthdate" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <div class="field">
+                        <i *ngIf="(FF['phone'].errors?.['required'] && !isFormValid) || (FF['phone'].invalid && !isFormValid)"
+                            matTooltip="Zəhmət olmasa düzgün nömrə daxil edin!" matTooltipPosition="above"
+                            class="invalid-icon fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <label for="phone" title="Nömrə" data-title="Nömrə"></label>
+                        <input autocomplete="off"
+                            [ngClass]="{'invalid': ((FF['phone'].errors?.['required'] && !isFormValid) || (FF['phone'].invalid && !isFormValid))}"
+                            type="text" id="phone" formControlName="phone" name="phone" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <div class="field">
+                        <i *ngIf="(FF['email'].errors?.['required'] && !isFormValid) || (FF['email'].invalid && !isFormValid)"
+                            matTooltip="Zəhmət olmasa düzgün email daxil edin!" matTooltipPosition="above"
+                            class="invalid-icon fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <label for="email" title="Email" data-title="Email"></label>
+                        <input autocomplete="off"
+                            [ngClass]="{'invalid': ((FF['email'].errors?.['required'] && !isFormValid) || (FF['email'].invalid && !isFormValid))}"
+                            type="email" id="email" formControlName="email" name="email" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-0 select">
+                    <div class="field">
+                        <i *ngIf="(FF['phone'].errors?.['required'] && !isFormValid) || (FF['phone'].invalid && !isFormValid)"
+                            class="invalid-icon fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <mat-form-field>
+                            <label for="select" title="Seçim" data-title="Seçim"></label>
+                            <mat-select formControlName="firmId">
+                                <mat-option *ngFor="let item of firms" [value]="item.key">{{item.value}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="mt-2" *ngIf="workList.length">
+        <div class="col-md-7 p-0 "
+            style="position: relative; border-left: 1px solid #dedede; border-right: 1px solid #dedede;">
+            <div class="bg-white pt-2 pb-2 " style="height: 100%; height: 75vh; overflow: auto;">
                 <div class="row">
-                    <div class=" col-lg-12">
-                        <div class="field-headers">
-                            <i class="me-2 fa-regular fa-list-check"></i> Görüləcək işlərin siyahısı:
+                    <div class="col-md-9">
+                        <div class="field">
+                            <label for="expence" title="Xidmət" data-title="Xidmət"></label>
+                            <input autocomplete="off" formControlName="expence" type="text" id="expence"
+                                name="expence" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="field">
+                            <label for="date" title="Tarix" data-title="Tarix"></label>
+                            <input autocomplete="off" formControlName="date" type="datetime-local" id="date"
+                                name="date" />
                         </div>
                     </div>
                 </div>
 
-                <div class="row py-2">
-                    <form [formGroup]="workForm">
-                        <div class="row">
-                            <div class="col-md-12 p-0" style="margin: 0;" formArrayName="workList"
-                                *ngFor="let t of workList.controls; let i = index; last as isLast; first as isFirst">
-                                <div class="col-md-12" style="margin: 0 !important;" [formGroupName]="i">
-                                    <div class="field checklist">
-                                        <span class="check-btn">
-                                            <mat-checkbox formControlName="isCheck" type="checkbox"
-                                                class="mt-1 example-margin" (click)="$event.stopPropagation()">
-                                            </mat-checkbox>
-                                        </span>
-                                        <input autocomplete="off" formControlName="value" type="text" id="value"
-                                            name="value" />
-                                        <span (click)="handleDeleteChecklist(i)" type="button" class="delete-btn">
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </span>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="field">
+                            <label for="description" title="Açıqlama" data-title="Açıqlama"></label>
+                            <textarea name="description" formControlName="description" id="description" cols="30"
+                                rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="" *ngIf="labelsArray.length">
+                    <div class="row">
+                        <div class=" col-lg-12">
+                            <div class="field-headers">
+                                <i class="me-2 fa-regular fa-tag"></i> Etiketlər:
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-12 d-flex">
+                            <div class="labels" *ngFor="let item of labelsArray; let i =index"
+                                [style.background-color]="item.color">
+                                {{item.name}}
+                                <span (click)="handleDeleteLabels(i)" class="ms-2">
+                                    x
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2" *ngIf="workList.length">
+                    <div class="row">
+                        <div class=" col-lg-12">
+                            <div class="field-headers">
+                                <i class="me-2 fa-regular fa-list-check"></i> Görüləcək işlərin siyahısı:
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row py-2">
+                        <form [formGroup]="workForm">
+                            <div class="row">
+                                <div class="col-md-12 p-0" style="margin: 0;" formArrayName="workList"
+                                    *ngFor="let t of workList.controls; let i = index; last as isLast; first as isFirst">
+                                    <div class="col-md-12" style="margin: 0 !important;" [formGroupName]="i">
+                                        <div class="field checklist">
+                                            <span class="check-btn">
+                                                <mat-checkbox formControlName="isCheck" type="checkbox"
+                                                    class="mt-1 example-margin" (click)="$event.stopPropagation()">
+                                                </mat-checkbox>
+                                            </span>
+                                            <input autocomplete="off" formControlName="value" type="text" id="value"
+                                                name="value" />
+                                            <span (click)="handleDeleteChecklist(i)" type="button" class="delete-btn">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mt-2" *ngIf="fileArray.length">
+                    <div class="row">
+                        <div class=" col-lg-12">
+                            <div class="field-headers">
+                                <i class="fa-sharp fa-regular fa-paperclip"></i> Fayllar:
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="py-2 px-1">
+                        <ul class="row col-lg-12 px-2" style="min-width: auto !important;">
+                            <li *ngFor="let item of fileArray; let i = index"
+                                class="mt-2 py-1 col-lg-12 align-items-center file-labels row">
+                                <div class="col-lg-9">
+                                    <span>
+                                        {{item.name}}
+                                    </span>
+                                </div>
+                                <div class="col-lg-3  ps-0 text-end">
+                                    <a [href]="item.url" target="_blank" class="me-1">
+                                        <i class="fa-sharp fa-regular fa-eye"></i> bax
+                                    </a>
+                                    <span class="ms-2" style="font-size: 12px;">
+                                        {{item.date}}
+                                    </span>
+                                    <span (click)="handleDeleteFile(i)" type="button" class="ms-3 delete-file-btn">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 pt-2 bg-white">
+            <div class="">
+                <div class="operation-headers">
+                    <i style="font-size: 16px;" class="me-1 fa-regular fa-layer-plus"></i> Əlavə et:
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-12 p-0">
+                        <button class="field-btns" [matMenuTriggerFor]="menu">
+                            <i class="me-2 fa-regular fa-tag"></i> Etiket
+                        </button>
+
+                        <mat-menu #menu="matMenu">
+                            <button (click)="handleAddLabel({id: 1, color: '#31AA75', name: 'Müainə'})" mat-menu-item
+                                style="background-color: #31AA75;font-weight: 500; color: #fff;">
+                                <i class="me-2 fa-regular fa-stethoscope"></i> Müainə
+                            </button>
+                            <button (click)="handleAddLabel({id: 2, color: '#F9D923', name: 'Müalicə'})" mat-menu-item
+                                style="background-color: #F9D923;font-weight: 500;color: #fff;">
+                                <i class="me-2 fa-sharp fa-regular fa-syringe"></i> Müalicə
+                            </button>
+                            <button (click)="handleAddLabel({id: 3, color: '#FF0000', name: 'Əməliyyat'})" mat-menu-item
+                                style="background-color: #FF0000;font-weight: 500;color: #fff;">
+                                <i class="me-2 fa-regular fa-scalpel-line-dashed"></i> Əməliyyat
+                            </button>
+                        </mat-menu>
+                    </div>
+                    <div class="col-md-12 p-0">
+                        <button class="field-btns" (click)="handleAddChecklist()">
+                            <i class="fa-regular fa-square-check"></i> Siyahı
+                        </button>
+                    </div>
+                    <div class="col-md-12 p-0">
+                        <button class="field-btns ">
+                            <div class="field m-0 p-0 doc-file">
+                                <i class="fa-sharp fa-regular fa-paperclip"></i>
+                                <input (change)="uploadFile($event)" type="file" title="" id="fileContract"
+                                    name="fileContract" class="selectfileInputPay" aria-label="0.0" />
+                                <input class="file" type="text" value="Fayl" disable />
+                            </div>
+                        </button>
+
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-2" *ngIf="fileArray.length">
-                <div class="row">
-                    <div class=" col-lg-12">
-                        <div class="field-headers">
-                            <i class="fa-sharp fa-regular fa-paperclip"></i> Fayllar:
-                        </div>
-                    </div>
+            <div class="mt-3">
+                <div class="operation-headers">
+                    <i class="fa-solid fa-list-check me-1"></i> Görülən işlər:
                 </div>
-                <div class="py-2 px-1">
-                    <ul class="row col-lg-12 px-2" style="min-width: auto !important;">
-                        <li *ngFor="let item of fileArray; let i = index"
-                            class="mt-2 py-1 col-lg-12 align-items-center file-labels row">
-                            <div class="col-lg-9">
-                                <span>
-                                    {{item.name}}
-                                </span>
-                            </div>
-                            <div class="col-lg-3  ps-0 text-end">
-                                <a [href]="item.url" target="_blank" class="me-1">
-                                    <i class="fa-sharp fa-regular fa-eye"></i> bax
-                                </a>
-                                <span class="ms-2" style="font-size: 12px;">
-                                    {{item.date}}
-                                </span>
-                                <span (click)="handleDeleteFile(i)" type="button" class="ms-3 delete-file-btn">
-                                    <i class="fa-regular fa-trash-can"></i>
-                                </span>
-                            </div>
+                <div class="row mt-1">
+                    <ul class="flex-column works">
+                        <li>
+                            <span>1.</span> Ağartma
+                        </li>
+                        <li>
+                            <span>2.</span> Plomp
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
-
-    <div class="col-md-2 pt-2 bg-white">
-        <div class="">
-            <div class="operation-headers">
-                <i style="font-size: 16px;" class="me-1 fa-regular fa-layer-plus"></i> Əlavə et:
-            </div>
-            <div class="row mt-1">
-                <div class="col-md-12 p-0">
-                    <button class="field-btns" [matMenuTriggerFor]="menu">
-                        <i class="me-2 fa-regular fa-tag"></i> Etiket
-                    </button>
-
-                    <mat-menu #menu="matMenu">
-                        <button (click)="handleAddLabel({color: '#31AA75', name: 'Müainə'})" mat-menu-item
-                            style="background-color: #31AA75;font-weight: 500; color: #fff;">
-                            <i class="me-2 fa-regular fa-stethoscope"></i> Müainə
-                        </button>
-                        <button (click)="handleAddLabel({color: '#F9D923', name: 'Müalicə'})" mat-menu-item
-                            style="background-color: #F9D923;font-weight: 500;color: #fff;">
-                            <i class="me-2 fa-sharp fa-regular fa-syringe"></i> Müalicə
-                        </button>
-                        <button (click)="handleAddLabel({color: '#FF0000', name: 'Əməliyyat'})" mat-menu-item
-                            style="background-color: #FF0000;font-weight: 500;color: #fff;">
-                            <i class="me-2 fa-regular fa-scalpel-line-dashed"></i> Əməliyyat
-                        </button>
-                    </mat-menu>
-                </div>
-                <div class="col-md-12 p-0">
-                    <button class="field-btns" (click)="handleAddChecklist()">
-                        <i class="fa-regular fa-square-check"></i> Siyahı
-                    </button>
-                </div>
-                <div class="col-md-12 p-0">
-                    <button class="field-btns ">
-                        <div class="field m-0 p-0 doc-file">
-                            <i class="fa-sharp fa-regular fa-paperclip"></i>
-                            <input (change)="uploadFile($event)" type="file" title="" id="fileContract"
-                                name="fileContract" class="selectfileInputPay" aria-label="0.0" />
-                            <input class="file" type="text" value="Fayl" disable />
-                        </div>
-                    </button>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-3">
-            <div class="operation-headers">
-                <i class="fa-solid fa-list-check me-1"></i>  Görülən işlər:
-            </div>
-            <div class="row mt-1">
-                <ul class="flex-column works">
-                    <li>
-                        <span>1.</span> Ağartma
-                    </li>
-                    <li>
-                        <span>2.</span> Plomp
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</div>
+</form>
 
 <div class="row py-2 justify-content-end" style="background: #fff; border-top: 1px solid #dedede;">
-    <div class="col-md-2 ps-0">
+    <div class="col-md-2 ">
         <button (click)="handleSave()" class="save-btn col-md-12">
             Yadda saxla
         </button>

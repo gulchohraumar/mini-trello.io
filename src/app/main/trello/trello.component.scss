@@ -132,7 +132,7 @@ div {
 
 .list-day {
   height: 65px !important;
-} 
+}
 
 .list-day:not(:first-child) {
   background-color: #4643D2;
@@ -186,14 +186,14 @@ div {
   border-top-left-radius: 9px;
 }
 
-.status-badge{
+.status-badge {
   position: absolute;
-    width: 10px;
-    height: 10px;
-    background: red;
-    border-radius: 50%;
-    right: 10px;
-    top: 5px;
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  right: 10px;
+  top: 5px;
 }
 
 .clock-con {

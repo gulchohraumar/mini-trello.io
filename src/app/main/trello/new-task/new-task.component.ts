@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -23,19 +23,39 @@ export class NewTaskComponent implements OnInit {
       key: 0,
       value: 'Secilmeyib'
     },
-    // {
-    //   key: 1,
-    //   value: 'Secilmeyib'
-    // },
   ];
 
   labelsArray: any[] = [];
 
+  isFormValid = true;
+  formGroup!: FormGroup;
   workForm!: FormGroup;
+  UpdateData: any;
+
   generateForm() {
     this.workForm = this.fb.group({
       workList: this.fb.array([])
-    })
+    });
+
+    this.formGroup = this.fb.group({
+      headerName: [this.UpdateData?.headerName ? this.UpdateData?.headerName : '', Validators.required],
+
+      name: [this.UpdateData?.name ? this.UpdateData?.name : '', Validators.required],
+      lastname: [this.UpdateData?.lastname ? this.UpdateData?.lastname : '', Validators.required],
+      fatherName: '',
+      birthdate: '',
+      phone: ['+994', [Validators.required, Validators.minLength(9)]],
+      email: [this.UpdateData?.email ? this.UpdateData?.email : '', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      firmId: 0,
+      expence: '',
+      date: formatDate(new Date(), 'yyyy-MM-dd hh:mm', 'en'),
+      description: '',
+
+      worksArray: [],
+      files: [],
+      tags: []
+
+    });
   }
 
   ngOnInit(): void {
@@ -44,6 +64,10 @@ export class NewTaskComponent implements OnInit {
 
   onCloseDialog() {
     this.dialogRef.close();
+  }
+
+  get FF(): { [key: string]: AbstractControl } {
+    return this.formGroup.controls;
   }
 
   get workList() {
@@ -67,7 +91,13 @@ export class NewTaskComponent implements OnInit {
   }
 
   handleAddLabel(data: any) {
-    this.labelsArray.length != 3 ? this.labelsArray.push(data) : null;
+    let check = this.labelsArray.some((dt: any) => {
+      if (dt.id == data.id) {
+        return true;
+      }
+      else return false;
+    });
+    this.labelsArray.length != 3 && !check ? this.labelsArray.push(data) : null;
   }
 
   handleDeleteLabels(index: number) {
@@ -96,7 +126,16 @@ export class NewTaskComponent implements OnInit {
   }
 
   handleSave() {
-    console.log(this.workForm.value);
+    if (this.formGroup.valid) {
+      this.isFormValid = true;
+      this.FF['worksArray'].setValue(this.workList.value);
+      this.FF['files'].setValue(this.fileArray);
+      this.FF['tags'].setValue(this.labelsArray);
+      console.log(this.formGroup.value);
+    }
+    else {
+      this.isFormValid = false;
+    }
   }
 
 }

@@ -33,6 +33,24 @@
 
           </div>
         </div>
+
+        <div class="example-list mb-1 row">
+          <div class="example-box p-0">
+            <span class="col-sm-12 justify-content-center align-items-center d-flex clock-text">
+              <span class="me-2 text-white calendar-con clock-con">
+                <i class="fa-sharp fa-regular fa-clock"></i>
+              </span>
+              Cəmi əməliyyatlar
+            </span>
+          </div>
+          <div class="example-box flex-column p-0 example-box-border " *ngFor="let item of sumOfDayWorks">
+            <!-- <span [style.background-color]="item.statusColor"> </span> -->
+            <span>{{item.examination}}</span>
+            <span>{{item.treatment}}</span>
+            <span>{{item.operation}}</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

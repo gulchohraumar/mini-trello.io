@@ -134,6 +134,51 @@ export class TrelloComponent implements OnInit {
     }
   ]
 
+  sumOfDayWorks = [
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: '#F9D923'
+    },
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: '#F9D923'
+    },
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: '#31AA75'
+    },
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: 'red'
+    },
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: '#F9D923'
+    },
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: '#31AA75'
+    },
+    {
+      examination: '3  müayinə',
+      treatment: '2 treatment',
+      operation: '1 operation',
+      statusColor: 'red'
+    },
+  ]
+
   previousContainer: any;
   container: any;
   previousIndex: any;
