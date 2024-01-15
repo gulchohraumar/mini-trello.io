@@ -136,46 +136,137 @@ export class TrelloComponent implements OnInit {
 
   sumOfDayWorks = [
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: '#F9D923'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: '#F9D923'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: '#31AA75'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: 'red'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: '#F9D923'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: '#31AA75'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
     {
-      examination: '3  müayinə',
-      treatment: '2 treatment',
-      operation: '1 operation',
-      statusColor: 'red'
+      work: [
+        {
+          result: '3  müayinə',
+          class: 'fa-regular fa-stethoscope',
+          color: '#31AA75'
+        },
+        {
+          result: '1  müalicə',
+          color: '#F9D923',
+          class:'fa-sharp fa-regular fa-syringe'
+        },
+        {
+          result: '2  əməliyyat',
+          color: 'red',
+          class: 'fa-regular fa-scalpel-line-dashed'
+        }
+      ]
     },
   ]
 

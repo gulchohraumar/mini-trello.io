@@ -14,7 +14,7 @@
         <div *ngFor="let item of fieldArray;let i =index" cdkDropList cdkDropListOrientation="horizontal"
           [cdkDropListData]="item.arr" class="example-list mb-1 row" (cdkDropListDropped)="drop(i,$event)"
           (cdkDropListExited)="exited($event)">
-          <div class="example-box p-0">
+          <div class="example-box p-0" style="cursor: default;">
             <span class="col-sm-12 justify-content-center align-items-center d-flex clock-text">
               <span class="me-2 text-white calendar-con clock-con">
                 <i class="fa-sharp fa-regular fa-clock"></i>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="example-list mb-1 row">
-          <div class="example-box p-0">
+          <div class="example-box p-0" style="cursor: default;">
             <span class="col-sm-12 justify-content-center align-items-center d-flex clock-text">
               <span class="me-2 text-white calendar-con clock-con">
                 <i class="fa-sharp fa-regular fa-clock"></i>
@@ -43,14 +43,13 @@
               Cəmi əməliyyatlar
             </span>
           </div>
-          <div class="example-box flex-column p-0 example-box-border " *ngFor="let item of sumOfDayWorks">
-            <!-- <span [style.background-color]="item.statusColor"> </span> -->
-            <span>{{item.examination}}</span>
-            <span>{{item.treatment}}</span>
-            <span>{{item.operation}}</span>
+          <div class="example-box flex-column p-0 example-box-border " style="cursor: default;" *ngFor="let item of sumOfDayWorks">
+            <span class="ps-2 py-1 finalResult" *ngFor="let subItem of item.work" [style.color]="subItem.color">
+              <i class="me-1 " [class]="subItem.class"></i>
+              {{subItem.result}}
+            </span>
           </div>
         </div>
-
       </div>
     </div>
   </div>
