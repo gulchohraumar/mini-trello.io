@@ -124,7 +124,7 @@ export class NewTaskComponent implements OnInit {
   handleDeleteFile(i: number) {
     this.fileArray.splice(i, 1);
   }
-
+ 
   handleSave() {
     if (this.formGroup.valid) {
       this.isFormValid = true;

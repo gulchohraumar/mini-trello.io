@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" class="common-con">
     <div class="row justify-content-between bg-white">
         <div class="col-md-12 px-0 header-con d-flex">
             <div class="header-name-con" style="position: relative;">
@@ -226,11 +226,11 @@
                 <div class="operation-headers">
                     <i style="font-size: 16px;" class="me-1 fa-regular fa-layer-plus"></i> Əlavə et:
                 </div>
-                <div class="row mt-1">
-                    <div class="col-md-12 p-0 ">
+                <div class="row mt-1 ">
+                    <div class="col-lg-12 p-0">
                         <button class="field-btns" [matMenuTriggerFor]="menu">
                             <i class="me-2 fa-regular fa-tag"></i> Etiket
-                        </button> 
+                        </button>
 
                         <mat-menu #menu="matMenu">
                             <button (click)="handleAddLabel({id: 1, color: '#31AA75', name: 'Müainə'})" mat-menu-item
@@ -247,13 +247,29 @@
                             </button>
                         </mat-menu>
                     </div>
+
                     <div class="col-md-12 p-0">
-                        <button class="field-btns" (click)="handleAddChecklist()">
+                        <button [matMenuTriggerFor]="listMenu" class="field-btns col-lg-12" >
                             <i class="fa-regular fa-square-check"></i> Siyahı
                         </button>
+
+                        <mat-menu #listMenu="matMenu">
+                            <button (click)="handleAddLabel({id: 1, color: '#31AA75', name: 'Müainə'})" mat-menu-item
+                                style="background-color: #31AA75;font-weight: 500; color: #fff;">
+                                <i class="me-2 fa-regular fa-stethoscope"></i> Müainə
+                            </button>
+                            <button (click)="handleAddLabel({id: 2, color: '#F9D923', name: 'Müalicə'})" mat-menu-item
+                                style="background-color: #F9D923;font-weight: 500;color: #fff;">
+                                <i class="me-2 fa-sharp fa-regular fa-syringe"></i> Müalicə
+                            </button>
+                            <button (click)="handleAddLabel({id: 3, color: '#FF0000', name: 'Əməliyyat'})" mat-menu-item
+                                style="background-color: #FF0000;font-weight: 500;color: #fff;">
+                                <i class="me-2 fa-regular fa-scalpel-line-dashed"></i> Əməliyyat
+                            </button>
+                        </mat-menu>
                     </div>
                     <div class="col-md-12 p-0">
-                        <button class="field-btns ">
+                        <button class="field-btns col-lg-12">
                             <div class="field m-0 p-0 doc-file">
                                 <i class="fa-sharp fa-regular fa-paperclip"></i>
                                 <input (change)="uploadFile($event)" type="file" title="" id="fileContract"

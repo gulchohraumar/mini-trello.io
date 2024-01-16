@@ -220,3 +220,17 @@ div {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
+.operation-btn {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #009846;
+  color: #fff;
+  display: inline-flex;
+  height: 42px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
