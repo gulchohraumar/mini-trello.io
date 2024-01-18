@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+
+<div>
+    <div class="header row justify-content-between">
+        <div class="col-md-2 p-0" >
+          <span class="logo-title" routerLink="../">
+            Trello
+          </span>
+        </div>
+
+        <div class="col-md-7 d-flex justify-content-center menu-container">
+            <span role="button" class="d-flex align-items-center menu-item me-2 ms-1" *ngFor="let item of menuList; let i=index" routerLink="{{item.url}}"
+                routerLinkActive="active-menu-item">
+                {{item.name}}
+            </span>
+        </div>
+
+        <div class="col-md-3 text-end">
+            <span class="me-3">
+                Gulchohra Umarli
+            </span>
+        </div>
+    </div>
+
+    <main class="main ">
+        <router-outlet></router-outlet>
+    </main>
+
+
+</div>

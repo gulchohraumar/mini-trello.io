@@ -20,13 +20,19 @@ import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ExpenseComponent } from './expense/expense.component';
+import { NewExpenseComponent } from './expense/new-expense/new-expense.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     MainComponent,
     TrelloComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    ExpenseComponent,
+    NewExpenseComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

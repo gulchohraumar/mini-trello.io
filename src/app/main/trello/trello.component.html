@@ -1,12 +1,12 @@
-<div class="my-3 col-sm-11 mx-auto" style="overflow: auto;">
+<div class=" col-sm-12 p-4" style="overflow: auto;">
   <div style="min-width: 980px;">
     <div cdkDropListGroup>
       <div class="example-container">
         <ul class="d-flex">
-          <li class="headers example-box justify-content-center list-day" *ngFor="let day of days;let i = index">
-            <span *ngIf="i !=0" class="me-2 text-white calendar-con">
+          <li class="headers example-box justify-content-center align-items-center list-day" *ngFor="let day of days;let i = index">
+            <!-- <span *ngIf="i !=0" class="me-2 text-white calendar-con">
               <i class="fa-duotone fa-calendar-days"></i>
-            </span>
+            </span> -->
             {{day.name}}
           </li>
         </ul>
