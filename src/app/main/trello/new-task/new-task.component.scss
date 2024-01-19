@@ -177,7 +177,7 @@
 }
 
 ::ng-deep .common-con .cdk-overlay-pane {
-    width: 180px  !important;
+    width: 180px !important;
 }
 
 ::ng-deep .mat-checkbox-checked .mat-checkbox-checkmark {
@@ -319,7 +319,7 @@
     font-size: 17px !important;
     position: absolute;
     right: 14px;
-    top: 4px;
+    top: 7px;
 }
 
 .check-btn {
@@ -371,4 +371,66 @@
     color: red;
     margin-top: -3px;
     font-size: 17px !important;
+}
+
+.workPrice {
+    font-size: 14px;
+    color: darkorange;
+}
+
+.old-expense {
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    padding: 0 8px;
+    height: 40px;
+    color: #222;
+    font-size: 15px;
+}
+
+.expense-date {
+    font-size: 14px;
+    color: darkorange;
+}
+
+.old-expense-item {
+    transition: 0.6s;
+    display: none;
+}
+
+.conditionalOpen {
+    height: min-content;
+    width: 100%;
+    display: inline-block;
+    animation: conditionalOpen 0.4s normal forwards ease-in-out;
+    transform-origin: 50% 0%;
+}
+
+.conditionalClose {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    animation: conditionalClose 0.4s normal forwards ease-in-out;
+    transform-origin: 100% 0%;
+}
+
+// Opening and closing motion for conditional fieldset
+@keyframes conditionalOpen {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes conditionalClose {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(0);
+        display: none;
+    }
 }

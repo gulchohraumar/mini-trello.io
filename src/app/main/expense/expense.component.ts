@@ -75,7 +75,7 @@ export class ExpenseComponent implements OnInit {
       id: 0,
       expense: '',
       price: 0,
-      status: false
+      status: true
     })
   }
 
@@ -136,13 +136,18 @@ export class ExpenseComponent implements OnInit {
     }
   }
 
-  handleAdd() {
+  changeStatus(event: any, element: any) {
+    let changeStatusData = {
+      id: element.id,
+      status: event.currentTarget.checked
+    }
+  
   }
 
-  handleUpdate() {
-  }
-
-  handleDelete() {
+  handleSave() {
+    console.log(this.formGroup.value);
+    this.dataSource.data.push(this.formGroup.value);
+    this.dataSource.data = this.dataSource.data;
   }
 
 }

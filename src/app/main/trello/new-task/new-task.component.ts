@@ -32,8 +32,44 @@ export class NewTaskComponent implements OnInit {
   workForm!: FormGroup;
   UpdateData: any;
 
+  oldExpenseList = [
+    {
+      isOpen: 0,
+      date: '01-11-2023',
+      expenses: [
+        {
+          id: 0,
+          value: 'test',
+        },
+        {
+          id: 1,
+          value: 'testttt 22',
+        },
+      ]
+    },
+    {
+      isOpen: 0,
+      date: '08-01-2024',
+      expenses: [
+        {
+          id: 0,
+          value: 'exense test',
+        },
+        {
+          id: 1,
+          value: 'exense test 22',
+        },
+      ]
+    },
+  ];
+
+  openCloseOldExpences(index: number, isOpen: number) {
+    this.oldExpenseList[index].isOpen = isOpen;
+  }
+
   generateForm() {
     this.workForm = this.fb.group({
+      date: formatDate(new Date(), 'dd-MM-yyyy', 'en'),
       workList: this.fb.array([])
     });
 
@@ -70,20 +106,24 @@ export class NewTaskComponent implements OnInit {
     return this.formGroup.controls;
   }
 
+  get WF(): { [key: string]: AbstractControl } {
+    return this.workForm.controls;
+  }
+
   get workList() {
     return <FormArray>this.workForm.controls['workList'];
   }
 
-  newWork(): FormGroup {
+  newWork(value: string): FormGroup {
     return this.fb.group({
       id: 0,
       isCheck: false,
-      value: '',
+      value: value,
     });
   }
 
-  handleAddChecklist() {
-    this.workList.push(this.newWork());
+  handleAddCheckList(item: any) {
+    this.workList.push(this.newWork(item));
   }
 
   handleDeleteChecklist(index: number) {
@@ -124,7 +164,7 @@ export class NewTaskComponent implements OnInit {
   handleDeleteFile(i: number) {
     this.fileArray.splice(i, 1);
   }
- 
+
   handleSave() {
     if (this.formGroup.valid) {
       this.isFormValid = true;
