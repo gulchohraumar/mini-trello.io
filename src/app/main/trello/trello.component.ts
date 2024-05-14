@@ -20,7 +20,7 @@ export class TrelloComponent implements OnInit {
   days = [
     {
       name: '',
-      color: ''
+      color: 'transparent'
     },
     {
       name: 'Monday',
@@ -131,7 +131,167 @@ export class TrelloComponent implements OnInit {
           statusColor: 'red'
         },
       ]
-    }
+    },
+    {
+      clock: '10:00-11:00',
+      arr: [
+        {
+          name: 'sfsf',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'fhfh',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'jhjhjhjh',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'klkkl',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+        {
+          name: 'twtwtwt',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'rwegdf',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'trdfgv',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+      ]
+    },
+    {
+      clock: '10:00-11:00',
+      arr: [
+        {
+          name: 'sfsf',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'fhfh',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'jhjhjhjh',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'klkkl',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+        {
+          name: 'twtwtwt',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'rwegdf',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'trdfgv',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+      ]
+    },
+    {
+      clock: '10:00-11:00',
+      arr: [
+        {
+          name: 'sfsf',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'fhfh',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'jhjhjhjh',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'klkkl',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+        {
+          name: 'twtwtwt',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'rwegdf',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'trdfgv',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+      ]
+    },
+    {
+      clock: '10:00-11:00',
+      arr: [
+        {
+          name: 'sfsf',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'fhfh',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'jhjhjhjh',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'klkkl',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+        {
+          name: 'twtwtwt',
+          date: '01-01-2024',
+          statusColor: '#F9D923'
+        },
+        {
+          name: 'rwegdf',
+          date: '01-01-2024',
+          statusColor: '#31AA75'
+        },
+        {
+          name: 'trdfgv',
+          date: '01-01-2024',
+          statusColor: 'red'
+        },
+      ]
+    },
   ]
 
   sumOfDayWorks = [

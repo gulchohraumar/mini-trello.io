@@ -2,13 +2,17 @@
   min-height: 100%;
   height: min-content !important;
   /* height: 75px !important; */
-  background: white;
+  background: transparent;
   border-radius: 4px;
 }
 
 .headers {
   position: relative;
   cursor: default !important;
+  background-color: #4643D2 !important;
+}
+
+.headers span{
   font-size: 16px !important;
   font-weight: 600 !important;
   color: #fff !important;
@@ -26,15 +30,36 @@
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: white;
+  background: transparent;
   font-size: 14px;
   flex-grow: 1;
   flex-basis: 0;
   min-height: 75px !important;
 }
 
+
+.example-box:first-child{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
 .example-box-border {
   border: 1px solid #ccc;
+}
+
+.example-container{
+  max-height: 84vh;
+  overflow: auto;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.days{
+  position: sticky;
+  top: 0;
+  height: auto;
+  width: 100%;
+  z-index: 2;
 }
 
 ::ng-deep .cdk-drop-list-dragging {
@@ -134,26 +159,21 @@ div {
   height: 65px !important;
 }
 
-.list-day:not(:first-child) {
-  background-color: #4643D2;
-}
-
-.list-day:not(:first-child),
 .list-day:not(:last-child) {
   border-right: 2px solid #ccc;
 }
 
-.list-day:first-child {
-  border: none;
-}
+// .list-day:first-child {
+//   border: none;
+// }
 
-.list-day:last-child {
-  border-top-right-radius: 10px
-}
+// .list-day:last-child {
+//   border-top-right-radius: 10px
+// }
 
-.list-day:nth-child(2) {
-  border-top-left-radius: 10px
-}
+// .list-day:nth-child(2) {
+//   border-top-left-radius: 10px
+// }
 
 .list-day .calendar-con {
   border-top-left-radius: unset;

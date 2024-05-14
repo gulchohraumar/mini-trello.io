@@ -2,12 +2,18 @@
   <div style="min-width: 980px;">
     <div cdkDropListGroup>
       <div class="example-container">
-        <ul class="d-flex">
-          <li class="headers example-box justify-content-center align-items-center list-day" *ngFor="let day of days;let i = index">
+        <ul class="d-flex days mb-1">
+          <li class="headers example-box justify-content-center align-items-center list-day"
+            *ngFor="let day of days;let i = index">
             <!-- <span *ngIf="i !=0" class="me-2 text-white calendar-con">
               <i class="fa-duotone fa-calendar-days"></i>
             </span> -->
-            {{day.name}}
+            <span *ngIf="i==0">
+              <i class="fa-solid fa-calendar-days"></i>
+            </span>
+            <span *ngIf="i!=0">
+              {{day.name}}
+            </span>
           </li>
         </ul>
 
@@ -43,7 +49,8 @@
               Cəmi əməliyyatlar
             </span>
           </div>
-          <div class="example-box flex-column p-0 example-box-border " style="cursor: default;" *ngFor="let item of sumOfDayWorks">
+          <div class="example-box flex-column p-0 example-box-border " style="cursor: default;"
+            *ngFor="let item of sumOfDayWorks">
             <span class="ps-2 py-1 finalResult" *ngFor="let subItem of item.work" [style.color]="subItem.color">
               <i class="me-1 " [class]="subItem.class"></i>
               {{subItem.result}}
@@ -54,4 +61,3 @@
     </div>
   </div>
 </div>
-
