@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
       url: 'task'
     },
     {
-      name: 'Xərc',
+      name: 'Xərclər',
       url: 'expense'
     },
   ]

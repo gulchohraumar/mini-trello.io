@@ -1,5 +1,5 @@
-<div class=" col-sm-12 p-4" style="overflow: auto;">
-  <div style="min-width: 980px;">
+<div class=" col-sm-12 p-4 " style="overflow: auto;">
+  <div class="" style="min-width: 980px;">
     <div cdkDropListGroup>
       <div class="example-container">
         <ul class="d-flex days mb-1">
@@ -28,7 +28,7 @@
               {{item.clock}}
             </span>
           </div>
-          <div class="example-box p-0 example-box-border " *ngFor="let item of item.arr">
+          <div class="example-box p-0 example-box-border task " *ngFor="let item of item.arr">
             <span class="status-badge" [style.background-color]="item.statusColor"> </span>
             <span class="item-cell col-sm-12 ps-2 pt-3" cdkDrag [cdkDragData]="item" (click)="handleOpenAdd()">
               {{item.name}}

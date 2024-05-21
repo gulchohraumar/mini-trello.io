@@ -241,13 +241,12 @@
 .header-name {
     outline: none;
     border: none;
-    border-bottom: 1px solid #9c9c9c;
+    border-bottom: 1px solid #dedede;
     width: 100%;
-    padding: 7px;
-    padding-left: 37px;
-    font-size: 20px;
-    color: #fff;
-    font-weight: 400;
+    padding: 9px 7px 9px 13px;
+    font-size: 18px;
+    color: #6a67fc;
+    font-weight: 500;
 }
 
 .works li span {
@@ -273,7 +272,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: #fff;
+    color: #6a67fc;
     z-index: 9;
     background: transparent;
     width: 33px;
@@ -285,13 +284,17 @@
 }
 
 .header-name-con i {
-    color: #fff;
+    color: #6a67fc;
 }
 
 .header-con,
 .header-name-con input {
-    background-color: #6a67fc;
+    background-color: #FFF;
     position: relative;
+}
+
+.header-name-con input::placeholder {
+   color: #6a67fc;
 }
 
 .close {
@@ -303,7 +306,7 @@
     padding: 0px 6px 0 12px;
     width: 42px;
     font-size: 23px;
-    color: #fff;
+    color: #6a67fc;
     height: 100%;
     text-align: eft;
     display: flex;
@@ -311,7 +314,7 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    background-color: #F37600;
+    // background-color: #6a67fc;
 }
 
 .delete-btn {
